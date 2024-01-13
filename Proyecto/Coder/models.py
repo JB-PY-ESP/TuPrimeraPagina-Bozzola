@@ -1,4 +1,5 @@
 from django.db import models
+from django import forms
 
 class Profesor(models.Model):
     nombre = models.CharField( max_length=100)
@@ -10,6 +11,7 @@ class Profesor(models.Model):
 class Estudiante(models.Model):
     nombre = models.CharField( max_length=100)
     email = models.EmailField()
+    fecha_de_nacimiento = models.DateField(null=True, blank=True)
     
     def __str__(self):
         return self.nombre
@@ -28,3 +30,4 @@ class EstudiantePorCurso(models.Model):
     
     def __str__(self) -> str:
         return f"{self.curso}:{self.estudiante}"
+    

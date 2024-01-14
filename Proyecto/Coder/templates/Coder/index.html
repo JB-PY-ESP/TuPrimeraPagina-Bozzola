@@ -2,9 +2,14 @@
 
 {% block contenido %}
     
-    <h1> Bienvenido </h1>
+    <h1> | Bienvenido Viajero</h1>
 
-    <button><a href="{% url 'profesor_list' %}">Ver Profesores</a></button>
-    <button><a href="{% url 'profesor_form' %}">Crear Profesor</a></button>
+    <button><a href="{% url 'asesor_list' %}">Ver Asesores</a></button>
+    <button><a href="{% url 'asesor_form' %}">Crear Asesor</a></button>
+    <button><a href="{% url 'viajero_list' %}">Ver Viajeros</a></button>
+    <button><a href="{% url 'viajero_form' %}">Crear Viajero</a></button>
+    <button><a href="{% url 'viaje_list' %}">Ver Viajes</a></button>
+    <button><a href="{% url 'viaje_form' %}">Crear Viaje</a></button>
+   
 
 {% endblock contenido %}

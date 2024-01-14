@@ -1,0 +1,39 @@
+{% extends "Coder/base.html" %}
+
+{% block title %}
+    | Asesor
+{% endblock title %}
+    
+{% block content_title %}
+    ASESORES
+{% endblock content_title %}
+
+{% block contenido %}
+    <h2>Asesor: Lista</h2>
+
+    <table border="1">
+        <thead>
+            <th>ID</th>
+            <th>Nombre</th>
+            <th>Apellido</th>
+            <th>Email</th>
+        </thead>
+        <tbody>
+            {% for asesor in asesores %}
+                <tr>
+                    <td>{{asesor.id_asesor}}</td>
+                    <td>{{asesor.nombre}}</td>
+                    <td>{{asesor.apellido}}</td>
+                    <td>{{asesor.email}}</td>
+
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <button><a href="{% url 'index' %}">Atrás</a></button>
+    <button><a href="{% url 'index' %}">Inicio</a></button>
+
+{% endblock contenido %}
+
+

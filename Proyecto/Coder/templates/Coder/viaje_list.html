@@ -1,0 +1,39 @@
+{% extends "Coder/base.html" %}
+
+{% block title %}
+    | Viaje
+{% endblock title %}
+    
+{% block content_title %}
+    VIAJE
+{% endblock content_title %}
+
+{% block contenido %}
+    <h2>Viaje: Lista</h2>
+
+    <table border="1">
+        <thead>
+            <th>Ciudad</th>
+            <th>Pais</th>
+            <th>Nombre y Apellido del Viajero</th>
+            <th>Fecha del Viaje</th>
+            <th>Asesor del viaje</th>
+        </thead>
+        <tbody>
+            {% for viaje in viajes %}
+                <tr>
+                    <td>{{viaje.ciudad}}</td>
+                    <td>{{viaje.pais}}</td>
+                    <td>{{viaje.viajero}}</td>
+                    <td>{{viaje.fecha_viaje}}</td>
+                    <td>{{viaje.asesor}}</td>
+
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <button><a href="{% url 'index' %}">Atrás</a></button>
+    <button><a href="{% url 'index' %}">Inicio</a></button>
+
+{% endblock contenido %}

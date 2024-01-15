@@ -16,7 +16,7 @@ def asesor_form(request):
         form = forms.AsesorForm(request.POST)
         if form.is_valid():
             form.save()
-            return redirect("asesor_list")
+            return redirect("Coder:asesor_list")
     else:
         form = forms.AsesorForm()
     
@@ -33,7 +33,7 @@ def viajero_form(request):
         form = forms.ViajeroForm(request.POST)
         if form.is_valid():
             form.save()
-            return redirect("viajero_list")
+            return redirect("Coder:viajero_list")
     else:
         form = forms.ViajeroForm()
     
@@ -50,7 +50,7 @@ def viaje_form(request):
         form = forms.ViajeForm(request.POST)
         if form.is_valid():
             form.save()
-            return redirect("viaje_list")
+            return redirect("Coder:viaje_list")
     else:
         form = forms.ViajeForm()
     

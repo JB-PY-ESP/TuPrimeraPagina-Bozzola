@@ -1,15 +1,58 @@
 {% extends "Coder/base.html" %}
-
+{% load static %}
 {% block contenido %}
-    
-    <h1> | Bienvenido Viajero</h1>
+ 
 
-    <button><a href="{% url 'asesor_list' %}">Ver Asesores</a></button>
-    <button><a href="{% url 'asesor_form' %}">Crear Asesor</a></button>
-    <button><a href="{% url 'viajero_list' %}">Ver Viajeros</a></button>
-    <button><a href="{% url 'viajero_form' %}">Crear Viajero</a></button>
-    <button><a href="{% url 'viaje_list' %}">Ver Viajes</a></button>
-    <button><a href="{% url 'viaje_form' %}">Crear Viaje</a></button>
-   
+            <!-- Masthead-->
+            <header class="masthead">
+
+                <div class="container px-4 px-lg-5 d-flex h-100 align-items-center justify-content-center">
+                    <div class="d-flex justify-content-center">
+                        <div class="text-center">
+                            <h1 class="mx-auto my-0 text-uppercase">Asesores & Viajeros</h1>
+                            <h2 class="text-white-50 mx-auto mt-2 mb-5">Para ayudarte en tu próximo viaje.</h2>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Contact-->
+            <section class="contact-section bg-black">
+                <div class="container px-4 px-lg-5">
+                    <div class="row gx-4 gx-lg-5">
+                        <div class="col-md-4 mb-3 mb-md-0">
+                            <div class="card py-4 h-100">
+                                <div class="card-body text-center">
+                                    <i class="fas fa-map-marked-alt text-primary mb-2"></i>
+                                    <h4 class="text-uppercase m-0">Ubicación</h4>
+                                    <hr class="my-4 mx-auto" />
+                                    <div class="small text-black-50">Online</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 mb-3 mb-md-0">
+                            <div class="card py-4 h-100">
+                                <div class="card-body text-center">
+                                    <i class="fas fa-envelope text-primary mb-2"></i>
+                                    <h4 class="text-uppercase m-0">Contacto</h4>
+                                    <hr class="my-4 mx-auto" />
+                                    <div class="small text-black-50"><a href="#!">josefinabozzola@asesores.com</a></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 mb-3 mb-md-0">
+                            <div class="card py-4 h-100">
+                                <div class="card-body text-center">
+                                    <i class="fas fa-mobile-alt text-primary mb-2"></i>
+                                    <h4 class="text-uppercase m-0">Teléfono</h4>
+                                    <hr class="my-4 mx-auto" />
+                                    <div class="small text-black-50">123456789</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>    
+            </section>
 
 {% endblock contenido %}

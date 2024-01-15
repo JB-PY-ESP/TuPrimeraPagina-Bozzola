@@ -1,7 +1,7 @@
 {% extends "Coder/base.html" %}
 
 {% block title %}
-    | Asesor
+    | Asesores
 {% endblock title %}
     
 {% block content_title %}
@@ -9,7 +9,7 @@
 {% endblock content_title %}
 
 {% block contenido %}
-    <h2>Asesor: Lista</h2>
+    <h2>Listado de Asesores</h2>
 
     <table border="1">
         <thead>
@@ -31,8 +31,8 @@
         </tbody>
     </table>
 
-    <button><a href="{% url 'index' %}">Atrás</a></button>
-    <button><a href="{% url 'index' %}">Inicio</a></button>
+    <button><a href="{% url 'Coder:index' %}">Atrás</a></button>
+    <button><a href="{% url 'Coder:index' %}">Inicio</a></button>
 
 {% endblock contenido %}
 

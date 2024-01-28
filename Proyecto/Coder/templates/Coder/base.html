@@ -7,8 +7,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="" />
         <meta name="author" content="" />
-        <title>Asesores de Viajes ✈️</title>
-        
+        <title>Asesores de Viajes ✈️
+        {% block title %} {% endblock title %} </title>
         <link rel="icon" type="image/x-icon" href="{% static 'Coder/assets/favicon.ico' %}" />
         <!-- Font Awesome icons (free version)-->
         <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
@@ -19,19 +19,20 @@
         <link href="{% static 'Coder/css/styles.css' %}" rel="stylesheet" />
         {% include 'Coder/navbar.html' %}
     </head>
-        {% block title %}
-    
-        {% endblock title %}
+           
+                        {% block content_title %}
+                        {% endblock content_title %}
 
-
+ 
+        
         {% block contenido %}
-
         {% endblock contenido %}
+
+
+
         
     <body id="page-top">
-
-        <!-- Footer-->
-        <footer class="footer bg-black small text-center text-white-50"><div class="container px-4 px-lg-5">Copyright &copy; Your Website 2023</div></footer>
+        {% include 'Coder/footer.html' %}
         <!-- Bootstrap core JS-->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
         <!-- Core theme JS-->

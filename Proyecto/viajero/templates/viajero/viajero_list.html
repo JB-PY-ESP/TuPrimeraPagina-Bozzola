@@ -1,0 +1,43 @@
+{% extends "Coder/base.html" %}
+
+
+{% block title %}
+    | Viajero
+{% endblock title %}
+    
+{% block content_title %}
+<div class="m-2 strong"> 
+    <h5><strong>Viajeros</strong></h5>
+</div>
+{% endblock content_title %}
+    
+
+{% block contenido %}
+    <table  class="table">
+        <thead>
+            <th class="text-center">Nombre</th>
+            <th class="text-center">Apellido</th>
+            <th class="text-center">Email</th>
+            <th class="text-center">Fecha de Nacimiento</th>
+        </thead>
+        <tbody>
+            {% for viajero in viajeros %}
+                <tr>
+                    <td>{{viajero.apellido}}</td>
+                    <td>{{viajero.nombre}}</td>
+                    <td>{{viajero.email}}</td>
+                    <td>{{viajero.fecha_de_nacimiento}}</td>
+            {% empty %}
+                <tr>
+                    <td colspan="4">No hay registros</td>
+                </tr>   
+            {% endfor %}
+
+        </tbody>
+    </table>
+
+    <a href="{% url 'viajero:index' %}" class="py-2 btn btn-dark m-2">Atrás</a>
+
+{% endblock contenido %}
+
+

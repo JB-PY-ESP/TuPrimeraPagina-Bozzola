@@ -1,0 +1,35 @@
+{% extends "Coder/base.html" %}
+
+{% load static %}
+
+{% block title %}
+    | Asesor
+{% endblock title %}
+    
+{% block content_title %}
+<div class="about-section p-1">
+    <h1 class="mx-auto my-0 text-primary " style="font-size: 20px;">
+        App Asesor
+    </h1>
+</div>
+{% endblock content_title %}
+
+{% block contenido %}
+ 
+            <!-- Masthead-->
+            <header class="masthead">
+
+                <div class="container px-4 px-lg-5 d-flex h-100 align-items-center justify-content-center">
+                    <div class="d-flex justify-content-center">
+                        <div class="text-center">
+                            <h1 class="mx-auto my-0 text-uppercase">Asesores</h1>
+                            <h2 class="text-white-50 mx-auto mt-2 mb-5">Aquí podrás registrarte como Asesor o verificar nuestra lista de asesores.</h2>
+                            <a class="btn btn-primary w-50 m-2" href="{% url 'asesor:asesor_list' %}">Nuestros Asesores</a>
+                            <a class="btn btn-primary w-50 m-2" href="{% url 'asesor:asesor_form' %}">Registro Asesor</a>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+
+{% endblock contenido %}

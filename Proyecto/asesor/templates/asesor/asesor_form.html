@@ -1,0 +1,24 @@
+{% extends 'Coder/base.html' %}
+
+{% block title %}
+    | Asesor
+{% endblock title %}
+
+{% block content_title %}
+    <div class="m-2 strong"> 
+        <h5><strong>Registrese como Asesor</strong></h5>
+    </div>
+{% endblock content_title %}
+
+{% block contenido %}
+    
+    <form method="post" class="m-2">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="py-2 btn btn-success m-2">Guardar</button>   
+        
+    </form>    
+        <a href="{% url 'asesor:index' %}" class="py-2 btn btn-dark m-2 ">Atrás</a>
+        <a href="{% url 'Coder:index' %}" class="py-2 btn btn-dark m-2 ">Inicio</a>
+{% endblock contenido %}
+

@@ -1,0 +1,44 @@
+{% extends "Coder/base.html" %}
+
+
+{% block title %}
+    | Viaje
+{% endblock title %}
+    
+{% block content_title %}
+<div class="m-2 strong"> 
+    <h5><strong>Nuestros Destinos</strong></h5>
+</div>
+{% endblock content_title %}
+    
+{% block contenido %}
+
+    <div class="container">
+        <div class="mb-4">
+            <form method="get">
+                <input type="text" class="form-control" name="consulta" placeholder="Buscar Pais">
+            </form>
+        </div>
+        <table class="table table-striped">
+            <thead>
+              <tr>
+                <th class="text-center">Pais</th>
+                <th class="text-center">Ciudad</th>
+              </tr>
+            </thead>
+            <tbody>
+              {% for categoria in object_list %}
+                <tr>
+                  <td>{{ categoria.pais}}</td>
+                  <td>{{ categoria.ciudad}}</td>
+                </tr>
+              {% empty %}
+                <tr>
+                  <td class="text-center">No hay categorías disponibles.</td>
+                </tr>
+              {% endfor %}
+            </tbody>
+        </table>
+        <a href="{% url 'viaje:index' %}" class="py-2 btn btn-dark m-2">Atrás</a>
+
+{% endblock contenido %}

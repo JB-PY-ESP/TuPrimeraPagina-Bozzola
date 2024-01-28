@@ -1,5 +1,7 @@
 {% extends "Coder/base.html" %}
+
 {% load static %}
+
 {% block contenido %}
  
 
@@ -11,10 +13,12 @@
                         <div class="text-center">
                             <h1 class="mx-auto my-0 text-uppercase">Asesores & Viajeros</h1>
                             <h2 class="text-white-50 mx-auto mt-2 mb-5">Para ayudarte en tu próximo viaje.</h2>
+                            <a class="btn btn-primary" href="{% url 'admin:index' %}">Administración</a>
                         </div>
                     </div>
                 </div>
             </header>
+
             <{% include "Coder/card.html" %}>
             <!-- Contact-->
             <section class="contact-section bg-black">

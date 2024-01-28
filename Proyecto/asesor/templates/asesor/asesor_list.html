@@ -1,0 +1,42 @@
+{% extends "Coder/base.html" %}
+
+{% block title %}
+    | Asesor
+{% endblock title %}
+    
+{% block content_title %}
+<div class="m-2 strong"> 
+    <h5><strong>Nuestros Asesores</strong></h5>
+</div>
+{% endblock content_title %}
+
+{% block contenido %}
+    
+
+    <table class="table">
+        <thead>
+            <th class="text-center">ID Asesor</th>
+            <th class="text-center">Nombre</th>
+            <th class="text-center">Apellido</th>
+            <th class="text-center">Email</th>
+        </thead>
+        <tbody>
+            {% for asesor in asesores %}
+                <tr>
+                    <td>{{asesor.id_asesor}}</td>
+                    <td>{{asesor.nombre}}</td>
+                    <td>{{asesor.apellido}}</td>
+                    <td>{{asesor.email}}</td>
+            {% empty %}
+                <tr>
+                    <td colspan="4">No hay registros</td>
+                </tr>   
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{% url 'asesor:index' %}" class="py-2 btn btn-dark m-2">Atrás</a>
+
+{% endblock contenido %}
+
+

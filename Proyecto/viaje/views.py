@@ -1,3 +1,4 @@
+from django.contrib.auth.mixins import LoginRequiredMixin
 from django.shortcuts import redirect, render
 from django.urls import reverse_lazy
 from django.views.generic import (
@@ -7,9 +8,10 @@ from django.views.generic import (
     ListView,
     UpdateView,
 )
-
+from django.http import  HttpResponse
 from .forms import *
 from .models import *
+
 
 def index(request):
     return render(request, "viaje/index.html")
@@ -27,18 +29,19 @@ class ViajeCategoriaList(ListView):
         return object_list
 
 
-class ViajeCategoriaCreate(CreateView):
+class ViajeCategoriaCreate(LoginRequiredMixin, CreateView):
     model = ViajeCategoria
     form_class = ViajeCategoriaForm
     success_url = reverse_lazy("viaje:viajecategoria_list")
+        
 
-class ViajeCategoriaUpdate( UpdateView):
+class ViajeCategoriaUpdate(LoginRequiredMixin, UpdateView):
     model = ViajeCategoria
     form_class = ViajeCategoriaForm2
     success_url = reverse_lazy("viaje:viajecategoria_list")
 
 
-class ViajeCategoriaDelete(DeleteView):
+class ViajeCategoriaDelete(LoginRequiredMixin, DeleteView):
     model = ViajeCategoria
     success_url = reverse_lazy("viaje:viajecategoria_list")
     

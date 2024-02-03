@@ -18,17 +18,25 @@
 
     <div class="card mt-4">
       <div class="card-body">
+        {% if user.username == 'admin' %}        
         <h5 class="card-title">¿Estás seguro de que deseas eliminar la categoría "{{ object.pais }}"?</h5>
         <p class="card-text">Esta acción no se puede deshacer.</p>
+        {% else %}
+        <p class="card-text">Usted no tiene permisos para realizar esta acción.</p>
+        {% endif %}
       </div>
     </div>
 
     <div class="mt-4">
       <form method="post">
         {% csrf_token %}
-        <button type="submit" class="btn btn-danger">Eliminar</button>
-        <a href="{% url 'viaje:viajecategoria_detail' object.id %}" class="btn btn-secondary">Cancelar</a>
-      </form>
+        {% if user.username == 'admin' %} 
+          <button type="submit" class="btn btn-danger">Eliminar</button>
+          <a href="{% url 'viaje:viajecategoria_detail' object.id %}" class="btn btn-secondary">Cancelar</a>
+        {% else %}
+          <a href="{% url 'viaje:viajecategoria_list' %}" class="btn btn-secondary">Volver a la Lista</a>
+        {% endif %} 
+        </form>
     </div>
   </div>
 {% endblock contenido %}

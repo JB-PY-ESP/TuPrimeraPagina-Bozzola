@@ -9,10 +9,23 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav ms-auto">
+            {% if user.is_authenticated %}
                 <li class="nav-item"><a class="nav-link {% if request.path == '/' %} active {% endif %}" href="{% url 'Coder:index' %}">Inicio</a></li>             
                 <li class="nav-item"><a class="nav-link {% if '/asesor/' in request.path %} active {% endif %} " href="{% url 'asesor:index' %}">Asesores</a></li>
                 <li class="nav-item"><a class="nav-link {% if '/viajero/' in request.path %} active {% endif %} " href="{% url 'viajero:index' %}">Viajeros</a></li>
                 <li class="nav-item"><a class="nav-link {% if '/viaje/' in request.path %} active {% endif %} " href="{% url 'viaje:index' %}">Destinos</a></li>
+                <li class="nav-item nav-link"><a> ¡Hola {{ user.username }}!</a></li>
+                <li class="navbar-nav ms-auto ">
+                    <form action="{% url 'Coder:logout' %}" method="post">
+                        {% csrf_token %}
+                        <button type="submit" class="py-2 btn btn-success m-4">Logout</button>
+                    </form>
+                </li>
+
+            {% else %}
+                <li class="nav-item"><a class="nav-link {% if '/login/' in request.path %} active {% endif %} " href="{% url 'Coder:login' %}">Login</a></li>
+                <li class="nav-item"><a class="nav-link {% if '/register/' in request.path %} active {% endif %} " href="{% url 'Coder:register' %}">Registrarse</a></li>
+            {% endif %}            
             </ul>
         </div>
     </div>

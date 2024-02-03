@@ -32,9 +32,13 @@
                   <td class="text-center">{{ categoria.pais}}</td>
                   <td class="text-center">{{ categoria.ciudad}}</td>
                   <td>
-                    <a href="{% url 'viaje:viajecategoria_detail' categoria.id%}" class="btn btn-primary me-2">Detalle</a>
-                    <a href="{% url 'viaje:viajecategoria_update' categoria.id %}" class="btn btn-warning me-2">Editar</a>
-                    <a href="{% url 'viaje:viajecategoria_confirm_delete' categoria.id %}" class="btn btn-danger">Eliminar</a>
+                    {% if user.username == 'admin' %}
+                      <a href="{% url 'viaje:viajecategoria_detail' categoria.id%}" class="btn btn-primary me-2">Detalle</a>
+                      <a href="{% url 'viaje:viajecategoria_update' categoria.id %}" class="btn btn-warning me-2">Editar</a>
+                      <a href="{% url 'viaje:viajecategoria_confirm_delete' categoria.id %}" class="btn btn-danger">Eliminar</a>
+                    {% else %}
+                      <a href="{% url 'viaje:viajecategoria_detail' categoria.id%}" class="btn btn-primary me-2">Detalle</a>
+                    {% endif %}
                   </td>                    
                 </tr>
               {% empty %}

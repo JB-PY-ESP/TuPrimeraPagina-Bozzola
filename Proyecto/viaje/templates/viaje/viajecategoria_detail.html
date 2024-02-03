@@ -1,0 +1,32 @@
+{% extends "Coder/base.html" %}
+
+
+{% block title %}
+    | Viaje
+{% endblock title %}
+    
+{% block content_title %}
+<div class="m-2 strong"> 
+    <h5><strong>Detalle de Nuestros Destinos</strong></h5>
+</div>
+{% endblock content_title %}
+
+
+{% block contenido %}
+  <div class="container">
+
+    <div class="card mt-4">
+      <div class="card-body">
+        <h5 class="card-title">{{ object.pais }}</h5>
+        <h5 class="card-title">{{ object.ciudad }}</h5>
+        <p class="card-text">{{ object.descripcion }}</p>
+      </div>
+    </div>
+
+    <div class="mt-4">
+      <a href="{% url 'viaje:viajecategoria_list' %}" class="btn btn-primary">Volver a la Lista</a>
+      <a href="{% url 'viaje:viajecategoria_update' object.id %}" class="btn btn-warning">Editar</a>
+      <a href="{% url 'viaje:viajecategoria_confirm_delete' object.id %}" class="btn btn-danger">Eliminar</a>
+    </div>
+  </div>
+{% endblock contenido %}

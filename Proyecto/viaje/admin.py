@@ -6,7 +6,7 @@ from .models import *
 admin.site.site_title = "Destinos"
 
 class ViajeAdmin(admin.ModelAdmin):
-    list_display = ("destino", "fecha_viaje", "viajero", "asesor", "comision", "fecha_actualizacion")
+    list_display = ("destino", "fecha_viaje", "viajero", "asesor", "comision", "fecha_actualizacion","descripcion")
     list_display_links = ("viajero",)
     search_fields = ("viajero",)
     ordering = ("fecha_viaje", "destino")

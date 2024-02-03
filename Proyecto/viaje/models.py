@@ -6,9 +6,10 @@ from viajero.models import Viajero
 class ViajeCategoria(models.Model):
     pais = models.CharField(max_length=100) 
     ciudad = models.CharField(max_length=100)
+    descripcion = models.TextField(null=True, blank=True, verbose_name="descripción")
 
     def __str__(self):
-        return f"{self.ciudad}, {self.pais}"
+        return f"{self.pais}, {self.ciudad}"
 
     class Meta:
         verbose_name = "categoría de destino"
@@ -21,7 +22,7 @@ class Viaje(models.Model):
     asesor = models.ForeignKey(Asesor, on_delete=models.SET_NULL, null=True, blank=True )
     comision = models.FloatField()
     fecha_actualizacion = models.DateField(default=timezone.now, editable=False, verbose_name="fecha de actualización")
-    
+    descripcion = models.TextField(null=True, blank=True, verbose_name="descripción")
     
     def __str__(self) -> str:
         return f"{self.fecha_viaje} - {self.viajero} - {self.destino}- Atendido por: {self.asesor}"

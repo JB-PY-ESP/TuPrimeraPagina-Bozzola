@@ -32,10 +32,9 @@ class ViajeCategoriaCreate(CreateView):
     form_class = ViajeCategoriaForm
     success_url = reverse_lazy("viaje:viajecategoria_list")
 
-
-class ViajeCategoriaUpdate(UpdateView):
+class ViajeCategoriaUpdate( UpdateView):
     model = ViajeCategoria
-    form_class = ViajeCategoriaForm
+    form_class = ViajeCategoriaForm2
     success_url = reverse_lazy("viaje:viajecategoria_list")
 
 
@@ -46,4 +45,16 @@ class ViajeCategoriaDelete(DeleteView):
 
 class ViajeCategoriaDetail(DetailView):
     model = ViajeCategoria
-    success_url = reverse_lazy("viaje:viajecategoria_list")
+
+from django.http import HttpResponse
+
+def destino_form(request) -> HttpResponse:
+    if request.method == "POST":
+        form = ViajeCategoriaForm2(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect("viaje:viajecategoria_list")
+    else:
+        form = ViajeCategoriaForm2()
+    
+    return render(request, "viaje/viajecategoria_form2.html", {"form":form})

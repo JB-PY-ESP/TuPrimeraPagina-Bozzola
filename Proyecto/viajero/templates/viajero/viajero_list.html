@@ -23,10 +23,10 @@
         <tbody>
             {% for viajero in viajeros %}
                 <tr>
-                    <td>{{viajero.apellido}}</td>
-                    <td>{{viajero.nombre}}</td>
-                    <td>{{viajero.email}}</td>
-                    <td>{{viajero.fecha_de_nacimiento}}</td>
+                    <td class="text-center">{{viajero.apellido}}</td>
+                    <td class="text-center">{{viajero.nombre}}</td>
+                    <td class="text-center">{{viajero.email}}</td>
+                    <td class="text-center">{{viajero.fecha_de_nacimiento}}</td>
             {% empty %}
                 <tr>
                     <td colspan="4">No hay registros</td>

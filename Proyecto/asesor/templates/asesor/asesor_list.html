@@ -23,10 +23,10 @@
         <tbody>
             {% for asesor in asesores %}
                 <tr>
-                    <td>{{asesor.id_asesor}}</td>
-                    <td>{{asesor.nombre}}</td>
-                    <td>{{asesor.apellido}}</td>
-                    <td>{{asesor.email}}</td>
+                    <td class="text-center">{{asesor.id_asesor}}</td>
+                    <td class="text-center">{{asesor.nombre}}</td>
+                    <td class="text-center">{{asesor.apellido}}</td>
+                    <td class="text-center">{{asesor.email}}</td>
             {% empty %}
                 <tr>
                     <td colspan="4">No hay registros</td>

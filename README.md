@@ -32,3 +32,11 @@ Para acceder como admin es necesario ingresar a /admin.
 
 Usuario: admin
 Contraseña:123
+
+## Video demostrativo
+
+El link para poder acceder al video demostrativo en YouTube es el siguiente:
+
+https://youtu.be/hbg4Zhbm_Zs
+
+Solo aquel que ingrese con ese link va a tener acceso al video. 
